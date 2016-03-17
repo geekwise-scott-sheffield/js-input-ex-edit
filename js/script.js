@@ -1,3 +1,6 @@
+/*
+
+
 //initial variables
 var input_box;
 var button;
@@ -28,17 +31,18 @@ function createItem(){
 }
 
 //calling this function will place content from the input bar to the top of the list
-function buttonActivated(){
-    callList().insertBefore(createItem(), callList().firstChild)
+function buttonClicked(){
+    callInput();
+    callButton();
+    callList();
+    createItem();
+
+    callList().insertBefore(createItem(), callList().firstChild);
+
 }
 
 
 document.addEventListener('DOMContentLoaded',function(event){
-
-
-
-
-
 
 
     //button.addEventListener('click',function(event){
@@ -47,3 +51,30 @@ document.addEventListener('DOMContentLoaded',function(event){
 
 
 });
+
+
+*/
+
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+
+//independant: calls HTML input
+var inputBox = document.querySelector("#input");
+//independant: calls HTML button
+var button = document.querySelector("#button");
+//independant: calls HTML calls unordered list
+var contentContainer = document.querySelector("#ul");
+//independant: variable; curently unassigned
+var item;
+
+//semi-independant: takes a parameter, makes it a li w/ content, nests in ul
+//foo = general parameter
+function createListItem(foo){
+    //makes parameter a list item
+    foo = document.createElement("li");
+    //list item is given syntax from input tag
+    foo.textContent = inputBox.value;
+    //list item is placed at the top of the unordered list
+    contentContainer.insertBefore(foo, contentContainer.firstChild);
+}
+

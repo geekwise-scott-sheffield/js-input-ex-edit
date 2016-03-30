@@ -2,24 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>todo list object oriented</title>
+    <title>todo list angularJS</title>
     <link rel="stylesheet" href="css/style.css">
     <!--cloudfare css cdn-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-    <!--jQuery JavaScript cdn-->
-    <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+    <!--angular JavaScript cdn-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
-<body>
-    Hello world! jQuey
+<body ng-app="todoList" ng-controller="listCtrlr">
+    Hello world! angularJS
 
     <br>
 
-    <input id="input" type="text" >
-    <button id="button" >submit</button>
+    <!--{{test}}-->
 
-    <ul id="ul">
+    <br>
 
-        <li id="spclLI"> </li>
+    <form ng-submit="addContent()">
+
+        <input id="input" type="text" ng-model="title" placeholder="List Items">
+
+        <button type="submit" id="button" >submit</button>
+
+    </form>
+    
+
+
+    <ul ng-repeat="item in content" id="ul">
+
+        <li id="spclLI">
+            {{item.title}}
+        </li>
     </ul>
 
 

@@ -4,7 +4,7 @@ app.controller('listCtrlr', [
     "$scope",
     function($scope){
 
-        $scope.test = 'halp';
+        //$scope.test = 'halp';
 
         $scope.content = [{
             title: "new items",
